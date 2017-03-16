@@ -10,7 +10,7 @@
 
     <typeAliases>
 
-        <typeAlias type='mutil.User' alias='User'></typeAlias>
+        <typeAlias type='mutil.Cust' alias='Cust'></typeAlias>
 
     </typeAliases>
 

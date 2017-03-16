@@ -9,15 +9,19 @@ import java.util.List;
 public class Test {
     public static void main(String args[]) throws IOException {
    UserService userService=new UserService();
-//        List<User> users=userService.getAllUsers();
-//        users.forEach(System.out::println);
-        User user =new User();
-        user.setEmailId("sss@gmail.com");
-        user.setFirstName("raja");
-        user.setLastName("aa");
-        user.setPassword("aaa1");
-       userService.insertUser(user);
-        List<User> users=userService.getAllUsers();
+////        List<User> users=userService.getAllUsers();
+////        users.forEach(System.out::println);
+//        User user =new User();
+//        user.setEmailId("sss@gmail.com");
+//        user.setFirstName("raja");
+//        user.setLastName("aa");
+//        user.setPassword("aaa1");
+//       userService.insertUser(user);
+    List<User> users=userService.getAllUsers();
     users.forEach(System.out::println);
+
+//        CustAddressService custAddressService =new CustAddressService();
+//        List<Cust>custs= custAddressService.getAddress();
+//        custs.forEach(System.out::println);
     }
 }

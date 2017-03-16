@@ -14,10 +14,22 @@ public class User
     private String emailId;
 
     private String password;
-    private String firstName;
+    private String firstName1;
 
     private String lastName;
-    private List<Order> order;
+    //private Order order;
+       private List<Order> orders;
+    public User() {
+    }
+
+    public User(Integer userId, String emailId, String password, String firstName1, String lastName, List<Order> orders) {
+        this.userId = userId;
+        this.emailId = emailId;
+        this.password = password;
+        this.firstName1 = firstName1;
+        this.lastName = lastName;
+        this.orders = orders;
+    }
 
     public Integer getUserId() {
         return userId;
@@ -43,12 +55,12 @@ public class User
         this.password = password;
     }
 
-    public String getFirstName() {
-        return firstName;
+    public String getFirstName1() {
+        return firstName1;
     }
 
-    public void setFirstName(String firstName) {
-        this.firstName = firstName;
+    public void setFirstName1(String firstName1) {
+        this.firstName1 = firstName1;
     }
 
     public String getLastName() {
@@ -59,12 +71,12 @@ public class User
         this.lastName = lastName;
     }
 
-    public List<Order> getOrder() {
-        return order;
+    public List<Order> getOrders() {
+        return orders;
     }
 
-    public void setOrder(List<Order> order) {
-        this.order = order;
+    public void setOrders(List<Order> orders) {
+        this.orders = orders;
     }
 
     @Override
@@ -73,9 +85,9 @@ public class User
                 "userId=" + userId +
                 ", emailId='" + emailId + '\'' +
                 ", password='" + password + '\'' +
-                ", firstName='" + firstName + '\'' +
+                ", firstName1='" + firstName1 + '\'' +
                 ", lastName='" + lastName + '\'' +
-                ", order=" + order +
+                ", orders=" + orders +
                 '}';
     }
 }

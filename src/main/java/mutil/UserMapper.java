@@ -18,24 +18,21 @@ public interface UserMapper {
 //
 //        public User getUserById(Integer userId);
 
-
+        @ConstructorArgs(value = {@Arg(column = "user_id",javaType = Integer.class),@Arg(column = "email_id",javaType = String.class),@Arg(column = "password",javaType = String.class),@Arg(column = "name",javaType = String.class),@Arg(column = "last_name",javaType = String.class),@Arg(select = "getMaster",column = "name",javaType = List.class )})
         @Select("SELECT * FROM USER ")
-        @Results({
-                @Result(id=true, property= "userId", column="user_id"),
-                @Result(property="emailId", column="email_id"),
-                @Result(property="password", column="password"),
-                @Result(property="firstName", column="first_name"),
-                @Result(property="lastName", column="last_name"),
-                @Result(property = "order", column = "first_name", many=@Many(select = "getMaster"))})
+//        @Results({
+//                @Result(property = "order", column = "name", one = @One(select = "getMaster"))})
         public List<User> getAllUsers();
 
 
-        @Select("SELECT orderId,orderName,first_name FROM user_order WHERE first_name = #{nama}")
-        List<Order> getMaster(String name);
+        @Select("SELECT * FROM user_order WHERE firstName= #{name}")
+       List<Order>  getMaster(String name);
 
 //        public void updateUser(User user);
 //
 //        public void deleteUser(Integer userId);
+    
+
 
     }
 
